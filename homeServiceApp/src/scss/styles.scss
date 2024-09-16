@@ -1,0 +1,17 @@
+//UI parts
+@import "layout";
+@import "variables";
+@import "base";
+
+// modules
+@import "./modules/header";
+@import "./modules/footer";
+@import "./modules/about_us";
+
+
+@if variable-exists(container_wrapper_width) {
+    .global-container {
+        max-width: $container_wrapper_width;
+        margin: 0 auto;
+    }
+}

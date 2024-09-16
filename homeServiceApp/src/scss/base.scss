@@ -1,0 +1,60 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2rem;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+button {
+    cursor: pointer;
+    color: #fff;
+    border: 0;
+    background-color: $theme-color;
+    padding: 1rem 1.5rem;
+    border-radius: $border_radius_button;
+
+    &:hover {
+        background-color: $active-color;
+    }
+}
+
+input {
+    color: $text-color;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 2px solid $border-color;
+    width: 100%;
+    max-width: $input_max_width;
+    border-radius: $border_radius_input;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+.tac {
+    text-align: center;
+}
+
+.tal {
+    text-align-last: left;
+}
+
+.tar {
+    text-align: right;
+}
