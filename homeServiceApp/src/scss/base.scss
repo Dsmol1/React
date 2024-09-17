@@ -34,8 +34,12 @@ input {
     font-size: 1rem;
     border: 2px solid $border-color;
     width: 100%;
-    max-width: $input_max_width;
+    max-width: -webkit-fill-available;
     border-radius: $border_radius_input;
+
+    @media screen and (min-width: $lg) {
+        max-width: $input_max_width;
+    }
 }
 
 h1,

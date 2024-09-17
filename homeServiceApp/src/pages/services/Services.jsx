@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from "./Services.module.scss";
 
 export default function Services() {
     return (
-        <section className="services">
+        <section className={`${styles.services} tac`}>
             <h1>Services</h1>
         </section>
     );

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from "./Search.module.scss";
 
 export default function SearchBar() {
     const [query, setQuery] = useState('');
@@ -9,12 +10,11 @@ export default function SearchBar() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle the search logic here
         console.log('Searching for:', query);
     };
 
     return (
-        <form onSubmit={handleSubmit} className="search-bar">
+        <form onSubmit={handleSubmit} className={styles.search}>
             <input
                 type="text"
                 value={query}

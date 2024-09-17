@@ -1,26 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import AboutUs from './pages/AboutUs';
+import Topbar from './components/_global/topbar/Topbar';
+import Footer from './components/_global/footer/Footer';
+import Home from './pages/home/Home';
+import Services from './pages/services/Services';
+import AboutUs from './pages/aboutUs/AboutUs';
+import Auth from './pages/auth/Auth';
 
 export default function App() {
   return (
-    <div>
-      <Router>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about-us" element={<AboutUs />} />
-          </Routes>
-        </main>
-        <Footer />
-      </Router>
-    </div>
+    <Router>
+      <Topbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/auth" element={<Auth />} />
+        </Routes>
+      </main>
+      <Footer />
+    </Router>
   );
 }
 

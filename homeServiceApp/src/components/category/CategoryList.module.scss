@@ -1,0 +1,30 @@
+.categoryList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 160px));
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.categoryItem {
+    background-color: $theme-color;
+    padding: 1rem;
+    border-radius: $border_radius_other;
+    cursor: pointer;
+    transition: background-color 250ms ease, transform 250ms ease;
+
+    &Name {
+        color: #fff;
+    }
+
+    &Icon {
+        color: $secondary;
+        font-size: 32px;
+        margin-bottom: .5rem;
+    }
+
+    &:hover {
+        transform: translateY(-10px);
+        background-color: $active-color;
+    }
+}
