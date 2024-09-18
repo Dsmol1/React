@@ -3,14 +3,21 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+      },
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `
-        @import "./src/scss/variables.scss";
-          // @import "./src/scss/*****.scss";
-        `
-      }
-    }
-  }
+          @import "./src/scss/variables.scss";
+        `,
+      },
+    },
+  },
 })

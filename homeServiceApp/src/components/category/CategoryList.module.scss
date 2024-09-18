@@ -12,6 +12,12 @@
     border-radius: $border_radius_other;
     cursor: pointer;
     transition: background-color 250ms ease, transform 250ms ease;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+        ;
+    }
 
     &Name {
         color: #fff;

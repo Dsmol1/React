@@ -6,6 +6,7 @@ import Home from './pages/home/Home';
 import Services from './pages/services/Services';
 import AboutUs from './pages/aboutUs/AboutUs';
 import Auth from './pages/auth/Auth';
+import SearchPage from './pages/searchPage/searchPage';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/search/:categoryName" element={<SearchPage />} />
         </Routes>
       </main>
       <Footer />
