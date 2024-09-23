@@ -1,0 +1,40 @@
+html {
+    max-width: 2560px;
+    margin: 0 auto;
+    font-size: 10px;
+
+    @media screen and (min-width: $sm) {
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: $md) {
+        font-size: 14px;
+    }
+
+    @media screen and (min-width: $lg) {
+        font-size: 16px;
+    }
+
+    #root {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+
+        main {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+    }
+}
+
+.flex-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (min-width: $md) {
+        grid-template-columns: 300px 1fr;
+
+    }
+}

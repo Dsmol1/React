@@ -1,0 +1,23 @@
+.searchPage {
+    padding: 1rem 2rem;
+
+    &Categories {
+
+        >div {
+            margin-top: 0;
+        }
+
+        &Items {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+
+            >div {
+                border-radius: $border_radius_other;
+                box-shadow: $box-shadow;
+                align-self: start;
+                padding: 1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 0 1rem;
+    background-color: $bg-color2;
+
+    &Error {
+        margin-top: 5px;
+        color: red;
+        font-size: 12px;
+    }
+
+    &Wrapper {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: $box-shadow;
+        padding: 1rem;
+        background-color: #fff;
+        border-radius: $border_radius_other;
+    }
+
+    &Form {
+        &Item {
+            input {
+                max-width: -webkit-fill-available;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

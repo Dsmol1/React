@@ -1,0 +1,49 @@
+.categoryList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 160px));
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.categoryItem {
+    position: relative;
+    background-color: $theme-color;
+    padding: 1rem;
+    border-radius: $border_radius_other;
+    cursor: pointer;
+    transition: background-color 250ms ease, transform 250ms ease;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &Fav {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: #fff;
+        cursor: pointer;
+        transition: color 0.3s ease-in-out;
+
+        &Active {
+            color: red;
+            animation: pulse 0.6s ease-in-out;
+        }
+    }
+
+    &Name {
+        color: #fff;
+    }
+
+    &Icon {
+        color: $secondary;
+        font-size: 32px;
+        margin-bottom: .5rem;
+    }
+
+    &:hover {
+        background-color: $active-color;
+    }
+}
