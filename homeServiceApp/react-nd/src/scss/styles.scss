@@ -1,0 +1,11 @@
+//UI parts
+@import "variables";
+@import "layout";
+@import "base";
+
+@if variable-exists(container_wrapper_width) {
+    .global-container {
+        max-width: $container_wrapper_width;
+        margin: 0 auto;
+    }
+}

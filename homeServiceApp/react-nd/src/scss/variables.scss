@@ -1,0 +1,35 @@
+$bg-color: #fff;
+$bg-color2: #f9f8fe;
+
+$input-bg: #fff; // background for form inputs
+$text-color: #0e0e10;
+$theme-color: #8056eb;
+$link-color: #323232;
+$active-color: #5b24e7;
+$border-color: #f1f1f1;
+$disabled-color: #ddd;
+$box-shadow: 5px 5px 15px rgba(86, 20, 208, 0.25);
+
+$error-text : #ff0000;
+$error-bg : #f9e5e5;
+$info-text : #1f8a70;
+$info-bg : #e8f3f0;
+
+$primary: $theme-color;
+$secondary: rgb(236, 187, 58);
+
+$input_height: 45px;
+$button_height: 45px;
+
+$input_max_width: 453px;
+
+$border_radius_search: 30px;
+$border_radius_input: 6px;
+$border_radius_button: 8px;
+$border_radius_other: 8px;
+
+//media
+$sm: 475px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1200px;
