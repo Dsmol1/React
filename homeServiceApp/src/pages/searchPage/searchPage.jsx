@@ -19,7 +19,7 @@ const SearchPage = () => {
             <br />
             <div className='flex-wrapper'>
                 <div className={styles.searchPageCategories}>
-                    <CategoryList />
+                    <CategoryList categories={categories} />
                 </div>
                 <div className={styles.searchPageCategoriesItems}>
                     {category.items.length > 0 ? (

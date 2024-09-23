@@ -30,7 +30,7 @@ export const categories = [
 
 
 
-const CategoryList = () => {
+const CategoryList = ({ categories = [] }) => {
     return (
         <div className={styles.categoryList}>
             {categories.map(category => (

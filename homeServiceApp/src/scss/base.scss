@@ -26,6 +26,10 @@ button {
     &:hover {
         background-color: $active-color;
     }
+
+    &.secondary {
+        background-color: $link-color;
+    }
 }
 
 input {
@@ -61,4 +65,44 @@ h6 {
 
 .tar {
     text-align: right;
+}
+
+.favorite-link {
+
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: red;
+        font-weight: 700;
+        transition: color 250ms;
+
+        &.active {
+            color: red;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        &:hover {
+            text-decoration: none;
+            color: darken(red, 10%);
+
+            svg {
+                color: darken(red, 10%);
+            }
+        }
+    }
+
+    svg {
+        color: red;
+        transition: color 250ms;
+    }
+}
+
+a {
+    &.active {
+        color: $primary;
+        text-decoration: underline;
+    }
 }
