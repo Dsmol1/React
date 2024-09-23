@@ -27,3 +27,14 @@ html {
         }
     }
 }
+
+.flex-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    @media screen and (min-width: $md) {
+        grid-template-columns: 300px 1fr;
+
+    }
+}

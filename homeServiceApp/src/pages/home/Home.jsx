@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from '../../components/search/Search';
-import CategoryList from '../../components/category/CategoryList';
+import CategoryList, { categories } from '../../components/category/CategoryList';
 import styles from "./Search.module.scss";
 
 
@@ -12,8 +12,7 @@ export default function Home() {
             <h2>Explore Best Home Service & Repair near you</h2>
             <br />
             <SearchBar />
-            <CategoryList />
+            <CategoryList categories={categories} />
         </section>
     );
 };
-
