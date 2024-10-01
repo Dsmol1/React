@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import styles from "./Search.module.scss";
+import styles from './Search.module.scss';
 
 export default function SearchBar() {
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState<string>('');
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(e.target.value);
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Searching for:', query);
     };
@@ -24,4 +24,4 @@ export default function SearchBar() {
             <button type="submit">Search</button>
         </form>
     );
-};
+}

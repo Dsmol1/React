@@ -1,9 +1,23 @@
-import React from 'react';
 import CategoryItem from './CategoryItem';
 import { FaTools, FaCoffee, FaAppleAlt, FaCar, FaHome, FaShoppingCart } from 'react-icons/fa';
-import styles from "./CategoryList.module.scss";
+import styles from './CategoryList.module.scss';
 
-export const categories = [
+interface Category {
+    id: number;
+    name: string;
+    icon: React.ReactNode;
+    items: Array<{
+        id: number;
+        title: string;
+        description: string;
+    }>;
+}
+
+interface CategoryListProps {
+    categories: Category[];
+}
+
+export const categories: Category[] = [
     {
         id: 1,
         name: 'Shifting',
@@ -28,9 +42,7 @@ export const categories = [
     { id: 6, name: 'Electric', icon: <FaShoppingCart />, items: [] }
 ];
 
-
-
-const CategoryList = ({ categories = [] }) => {
+const CategoryList: React.FC<CategoryListProps> = ({ categories }) => {
     return (
         <div className={styles.categoryList}>
             {categories.map(category => (

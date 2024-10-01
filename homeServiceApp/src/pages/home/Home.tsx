@@ -1,4 +1,3 @@
-import React from 'react';
 import SearchBar from '../../components/search/Search';
 import CategoryList, { categories } from '../../components/category/CategoryList';
 import styles from "./Search.module.scss";

@@ -1,13 +1,10 @@
-import React from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 import CategoryList from '../../../components/category/CategoryList';
 import { categories } from '../../../components/category/CategoryList';
-import styles from "../Services.module.scss";
+import styles from '../Services.module.scss';
 
-
-
-export default function Favorites() {
-    const [favorites] = useLocalStorage('favorites', []);
+const Favorites: React.FC = () => {
+    const [favorites] = useLocalStorage<string[]>('favorites', []);
 
     const favoriteCategories = categories.filter(category => favorites.includes(category.name));
 
@@ -15,10 +12,12 @@ export default function Favorites() {
         <section className={`${styles.services} tac`}>
             <h1>Favoritai</h1>
             {favoriteCategories.length === 0 ? (
-                <p>Nera favoritu</p>
+                <p>Nėra favorių</p>
             ) : (
                 <CategoryList categories={favoriteCategories} />
             )}
         </section>
     );
 };
+
+export default Favorites;

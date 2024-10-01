@@ -1,11 +1,15 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from 'react-icons/fa';
 import { useLocalStorage } from 'usehooks-ts';
 import styles from './CategoryList.module.scss';
 
-const CategoryItem = ({ name, icon }) => {
-    const [favorites, setFavorites] = useLocalStorage('favorites', []);
+interface CategoryItemProps {
+    name: string;
+    icon: React.ReactNode;
+}
+
+const CategoryItem: React.FC<CategoryItemProps> = ({ name, icon }) => {
+    const [favorites, setFavorites] = useLocalStorage<string[]>('favorites', []);
     const isFavorited = favorites.includes(name);
 
     const toggleFavorite = () => {

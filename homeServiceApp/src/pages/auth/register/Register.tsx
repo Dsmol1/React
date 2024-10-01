@@ -1,27 +1,36 @@
-import React, { useState, useContext, createContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '@/providers/UserContext';
-import styles from "../Auth.module.scss";
+import styles from '../Auth.module.scss';
 
-const Register = () => {
+// Define the structure of the errors state
+interface Errors {
+    name: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+}
+
+const Register: React.FC = () => {
     const navigate = useNavigate();
-    const { setUser } = useContext(UserContext);
+    const userContext = useContext(UserContext);
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [errors, setErrors] = useState({
-        name: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
-    });
+    if (!userContext) {
+        throw new Error('UserContext is not provided');
+    }
 
-    const handleSubmit = (e) => {
+    const { setUser } = userContext;
+
+    const [name, setName] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
+    const [errors, setErrors] = useState<Errors>({ name: '', email: '', password: '', confirmPassword: '' });
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         let valid = true;
-        let newErrors = { name: '', email: '', password: '', confirmPassword: '' };
+        let newErrors: Errors = { name: '', email: '', password: '', confirmPassword: '' };
 
         if (!name) {
             newErrors.name = 'Name is required';
@@ -33,8 +42,8 @@ const Register = () => {
             valid = false;
         } else {
             // Check for existing email
-            const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
-            if (existingUsers.some(user => user.email === email)) {
+            const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+            if (existingUsers.some((user: { email: string }) => user.email === email)) {
                 newErrors.email = 'Email already exists';
                 valid = false;
             }
@@ -54,17 +63,18 @@ const Register = () => {
 
         if (valid) {
             const userData = {
+                id: Date.now(), // Generate a unique ID (you can use a more robust method)
                 name,
                 email,
                 password,
             };
 
             // Save new user to localStorage
-            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
             users.push(userData);
             localStorage.setItem('users', JSON.stringify(users));
 
-            setUser(userData);
+            setUser(userData); // Set user with generated ID
             localStorage.setItem('user', JSON.stringify(userData));
 
             navigate('/');

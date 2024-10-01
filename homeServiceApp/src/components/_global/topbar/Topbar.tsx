@@ -7,7 +7,7 @@ import styles from "./Topbar.module.scss";
 
 export default function Topbar() {
     const navigate = useNavigate();
-    const { user, logout } = useContext(UserContext);
+    const { user, logout } = useContext(UserContext)!;
 
     const handleLogout = () => {
         logout();
